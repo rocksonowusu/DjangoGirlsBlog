@@ -13,16 +13,35 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"
     />
-    
-        
     <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
   </head>
   <body>
-    <header class="page-header" >
+    <header class="page-header">
       <div class="container">
-        <a href="{% url 'post_new' %}" class="top-menu"> {% include './icons/file-earmark-plus.svg' %}
-        </a>
-        <h1><a href="/">Django Girls Blog</a></h1>
+        <div class="header-content">
+          <div class="logo">
+            <h1><a href="/">Django Girls Blog</a></h1>
+          </div>
+          <div class="nav-buttons">
+            {% if user.is_authenticated %}
+              <div class="auth-actions">
+                <a href="{% url 'post_new' %}" class="btn btn-outline-light" title="New Post">
+                  {% include './icons/file-earmark-plus.svg' %}
+                  <span class="btn-text">New Post</span>
+                </a>
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+              </div>
+            {% else %}
+              <div class="auth-actions">
+                <a href="{% url 'login' %}" class="btn btn-outline-light">Login</a>
+                <a href="{% url 'signup' %}" class="btn btn-outline-light">Sign Up</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
       </div>
     </header>
     <main class="container">

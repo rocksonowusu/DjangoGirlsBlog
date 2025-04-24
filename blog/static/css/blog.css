@@ -1,68 +1,278 @@
+/* Original Django Girls CSS */
 h1 a, h2 a {
     color: #C25100;
     font-family: 'Lobster';
-    }
-    
+}
+
 body {
     padding-left: 15px;
+    padding-right: 15px;
+    background-color: #f9f9f9;
+}
+
+.page-header {
+    background-color: #C25100;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea,
+.post-form input {
+    width: 100%;
+}
+
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h2 a,
+.post h2 a:visited {
+    color: #000000;
+}
+
+.post > .date,
+.post > .actions {
+    float: right;
+}
+
+.btn-secondary,
+.btn-secondary:visited {
+    color: #C25100;
+    background: none;
+    border-color: #C25100;
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    color: #FFFFFF;
+    background-color: #C25100;
+}
+
+/* New header and auth styling */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    flex-grow: 1;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.auth-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Button styling */
+.btn-outline-light {
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all 0.2s ease;
+    border-radius: 25px;
+    padding: 8px 18px;
+    font-weight: 500;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #C25100;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* New post button with icon */
+.btn-outline-light svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: text-bottom;
+}
+
+.btn-text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Auth form styling */
+.signup-form,
+.login-form {
+    max-width: 450px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.signup-form h2,
+.login-form h2 {
+    color: #C25100;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.form-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.signup-form label,
+.login-form label {
+    font-weight: 600;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.signup-form input,
+.login-form input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.signup-form input:focus,
+.login-form input:focus {
+    border-color: #C25100;
+    box-shadow: 0 0 0 3px rgba(194, 81, 0, 0.1);
+    outline: none;
+}
+
+.signup-form button,
+.login-form button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary,
+.btn-secondary:visited {
+    color: #ffffff;
+    background-color: #C25100;
+    border-color: #C25100;
+    margin-left: 0;
+}
+
+.btn-secondary:hover {
+    background-color: #a84500;
+    border-color: #a84500;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(194, 81, 0, 0.2);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+
+.form-footer a {
+    color: #C25100;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+    color: #a84500;
+}
+
+/* Error handling */
+.errorlist {
+    color: #d9534f;
+    background-color: #fdf7f7;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px 0 10px;
+    font-size: 14px;
+    list-style-type: none;
+}
+
+.errorlist p {
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
     }
-    .page-header {
-        background-color: #C25100;
-        margin-top: 0;
-        margin-bottom: 40px;
-        padding: 20px 20px 20px 40px;
-        }
-        .page-header h1,
-        .page-header h1 a,
-        .page-header h1 a:visited,
-        .page-header h1 a:active {
-        color: #ffffff;
-        font-size: 36pt;
-        text-decoration: none;
-        }
-        h1,
-        h2,
-        h3,
-        h4 {
-        font-family: 'Lobster', cursive;
-        }
-        .date {
-        color: #828282;
-        }
-        .save {
-        float: right;
-        }
-        .post-form textarea,
-        .post-form input {
+    
+    .logo {
         width: 100%;
-        }
-        .top-menu,
-        .top-menu:hover,
-        .top-menu:visited {
-        color: #ffffff;
-        float: right;
-        font-size: 26pt;
-        margin-right: 20px;
-        }
-        .post {
-        margin-bottom: 70px;
-        }
-        .post h2 a,
-        .post h2 a:visited {
-        color: #000000;
-        }
-        .post > .date,
-        .post > .actions {
-        float: right;
-        }
-        .btn-secondary,
-        .btn-secondary:visited {
-        color: #C25100;
-        background: none;
-        border-color: #C25100;
-        margin-left: 15px;
-        }
-        .btn-secondary:hover {
-        color: #FFFFFF;
-        background-color: #C25100;
-        }
+        text-align: center;
+    }
+    
+    .nav-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .signup-form,
+    .login-form {
+        padding: 25px;
+        margin: 30px auto;
+        width: 90%;
+    }
+}
